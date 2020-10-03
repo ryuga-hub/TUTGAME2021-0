@@ -20,7 +20,7 @@ public class Cutter : MonoBehaviour
             timer = 0.0f;
             GameObject Cutter = Instantiate(CutterPrefab, transform.position, Quaternion.identity);
             Rigidbody CutterRb = Cutter.GetComponent<Rigidbody>();
-            CutterRb.AddForce(0.0f, 0.0f, power);
+            CutterRb.AddForce(transform.forward * power);
             
             // 発射したカッターを4秒後に破壊する。
             Destroy(Cutter, 4.0f);
